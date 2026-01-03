@@ -40,7 +40,7 @@ public class CouponService {
         validateCouponExpirationDate(coupon.getExpirationDate());
 
         if (couponRepository.existsByCode(code)) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ("Cupom já existe: " + code + "ou já deletado." + coupon.getStatus()));
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ("Cupom já existente: " + code + " ou já deletado."));
         }
 
         CouponEntity couponEntity = new CouponEntity();

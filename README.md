@@ -8,6 +8,18 @@
   ./mvnw clean test
   ./mvnw spring-boot:run
   ```
+## exemplo de Json para criação de cupom
+rota /coupon
+{
+"code": "ABC123",
+"description": "teste",
+"discountValue": 0.5,
+"expirationDate": "2026-01-04T17:14:45.180Z"
+}
+ 
+para buscar/ou deletar o cupom, necessário passar o id na url
+localhost:8080/coupon/d25962a6-f3b0-4184-adc9-ec5e7e68ecba
+
 - Banco: H2 em memória (`jdbc:h2:mem:coupondb`) com console em `/h2-console`.
 
 ## Como validei
@@ -15,8 +27,8 @@
 - Testes unitários do controller com Mockito (status e payload do POST/DELETE/GET).
 
 ## Decisões técnicas
-- Spring Boot 4 + JPA/Hibernate com H2 em memória para rapidez de desenvolvimento.
--.UUID como `id` e `code` como chave lógica com sanitização (6 caracteres alfanuméricos).
+- Spring Boot + JPA/Hibernate com H2.
+-.UUID como `id` e `code` como unique_key.
 - Soft delete com status (`ACTIVE/INACTIVE/DELETED`) para manter histórico.
 - Booleans como `Boolean` para evitar parse error de `null` no JSON.
 
