@@ -1,13 +1,8 @@
 # CouponApi
 
 ## Como rodar
-- Requisitos: JDK 21+.
-- Comandos:
-  ```bash
-  cd CouponApi
-  ./mvnw clean test
-  ./mvnw spring-boot:run
-  ```
+- Requisitos: JDK 21
+- IDE: configure o SDK do projeto para JDK 21 e use o run/debug da IDE.
 ## exemplo de Json para criação de cupom
 rota /coupon
 {
@@ -23,12 +18,12 @@ localhost:8080/coupon/d25962a6-f3b0-4184-adc9-ec5e7e68ecba
 - Banco: H2 em memória (`jdbc:h2:mem:coupondb`) com console em `/h2-console`.
 
 ## Como validei
-- Testes unitários de domínio e service (validação de código, desconto mínimo, sanitização, soft delete).
+- Testes unitários de domínio e service (validação de código, desconto mínimo, formatação, soft delete).
 - Testes unitários do controller com Mockito (status e payload do POST/DELETE/GET).
 
 ## Decisões técnicas
 - Spring Boot + JPA/Hibernate com H2.
--.UUID como `id` e `code` como unique_key.
+- UUID como `id` e `code` como unique_key.
 - Soft delete com status (`ACTIVE/INACTIVE/DELETED`) para manter histórico.
 - Booleans como `Boolean` para evitar parse error de `null` no JSON.
 

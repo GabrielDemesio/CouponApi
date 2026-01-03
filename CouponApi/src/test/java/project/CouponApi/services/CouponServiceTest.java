@@ -62,7 +62,7 @@ class CouponServiceTest {
         verify(couponRepository).save(captor.capture());
         CouponEntity saved = captor.getValue();
 
-        assertEquals("ABC123", saved.getCode(), "Deve salvar código sanitizado");
+        assertEquals("ABC123", saved.getCode(), "Deve salvar código formatado");
         assertTrue(saved.getPublished(), "Deve persistir publicado conforme entrada");
         assertEquals(Status.ACTIVE, saved.getStatus(), "Status inicial deve ser ACTIVE");
         assertFalse(Boolean.TRUE.equals(saved.getDeleted()), "Soft delete deve começar desativado");

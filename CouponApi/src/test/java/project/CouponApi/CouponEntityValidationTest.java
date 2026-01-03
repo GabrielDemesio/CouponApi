@@ -38,7 +38,7 @@ class CouponEntityValidationTest {
     @Test
     void shouldFailWhenCodeIsNotSixAlphanumericCharacters() {
         CouponEntity coupon = validCoupon();
-        coupon.setCode("ABC1"); // inválido: tamanho 4
+        coupon.setCode("ABC1");
 
         Set<ConstraintViolation<CouponEntity>> violations = validator.validate(coupon);
 
