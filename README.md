@@ -1,8 +1,8 @@
 # CouponApi
 
 ## Como rodar
-- Requisitos: JDK 21
-- IDE: configure o SDK do projeto para JDK 21 e use o run/debug da IDE.
+- Requisitos: JDK 24
+- IDE: configure o SDK do projeto para JDK 24 e use o run/debug da IDE.
 ## exemplo de Json para criação de cupom
 rota /coupon
 {
