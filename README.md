@@ -28,7 +28,7 @@ localhost:8080/coupon/d25962a6-f3b0-4184-adc9-ec5e7e68ecba
 - Booleans como `Boolean` para evitar parse error de `null` no JSON.
 
 ## Se tivesse mais tempo
-- Mudar a arquitetura para hexagonal 
+- Mudar a arquitetura atual para hexagonal 
 - Adicionar DTOs separados para request/response e documentação OpenAPI.
 - Cobrir casos de expiração automática e reativação/remoção definitiva de cupons deletados.
 - Incluir testes de integração end-to-end (MockMvc) e pipeline de CI.
